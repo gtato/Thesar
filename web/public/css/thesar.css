@@ -1,0 +1,40 @@
+ html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-weight: 100;
+    margin: 0;
+    padding-top: 50px;
+}
+
+#icon{
+	width:32px;
+	margin-top: -8px;
+	margin-right: 8px;
+}
+
+.starter-template {
+  /*padding: 40px 15px;*/
+  text-align: center;
+}
+
+.raleway{
+	font-family: 'Raleway', sans-serif;
+}
+
+/*#navbar{
+	background-color: #3c7bbe;
+	color: white;
+}*/
+
+.title {
+   margin-bottom: 30px;
+   font-size: 100px;   
+}
+
+.subtitle {
+    font-size: 60px;
+}
+
+.content{
+	font-size: 30px;	
+}
