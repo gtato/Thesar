@@ -3,7 +3,7 @@
     color: #636b6f;
     font-weight: 100;
     margin: 0;
-    padding-top: 50px;
+    padding-top: 40px;
 }
 
 #icon{
@@ -37,4 +37,12 @@
 
 .content{
 	font-size: 30px;	
+}
+
+.navbar-brand{
+  margin-right: 50px;
+}
+
+.navbar-right{
+  margin-left: 50px;
 }
