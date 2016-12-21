@@ -2,7 +2,9 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
+
+
+    <!-- <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Thesar</div>
@@ -12,6 +14,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+
+    @if (!Auth::guest())
+        <a href="{{ url('/newentry') }}" class="btn">Shto hyrje</a> 
+        |
+        <a href="#" class="btn">Verifiko</a> 
+    @endif
 </div>
 @endsection
