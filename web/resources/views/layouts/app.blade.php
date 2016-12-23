@@ -11,8 +11,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
     <link href="css/thesar.css" rel="stylesheet">
+    <link href="css/bootstrap-tagsinput.css" rel="stylesheet">
+    
     <!-- <link href="css/bs/bootstrap.css" rel="stylesheet">  -->
 
     <!-- Scripts -->
@@ -142,9 +144,9 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
-
-
-
+    <script src="/js/bootstrap-tagsinput.min.js"></script>
+    <script src="/js/typeahead.bundle.js"></script>
+    <script src="/js/entry.js"></script>
 
 </body>
 </html>

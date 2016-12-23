@@ -24,16 +24,15 @@ class EntryController extends Controller
      */
     public function index()
     {
-
-        $def = '<input type="text"  placeholder="Hyrje e re" name="entry">';
-        $def .= '<select>';
+        $def = array('cat' => '');
+        
+        $def['cat'] .= '<select class="form-control">';
         $categories = Category::all();
-        foreach ($categories as $category) {
-            $def .= '<option value="'. $category->id.'">'.$category->name.'</option>';
-            
-        }
-        $def .= '</select>';
-
+        foreach ($categories as $category) 
+            $def['cat'] .= '<option value="'. $category->id.'">'.$category->name.'</option>';
+        $def['cat'] .= '</select>';
+        
+        
         return view('entry', array('edit' => True , 'def' => $def ));
     }
 }
