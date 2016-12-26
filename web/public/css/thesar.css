@@ -103,3 +103,10 @@
 .bootstrap-tagsinput {
     width: 100%;
 }
+
+#conjugs table td {
+    text-align: center;
+}
+#conjugs table th {
+    text-align: center;
+}
