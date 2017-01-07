@@ -18,6 +18,9 @@ class CategoriesSeeder extends Seeder
         DB::table('categories')->insert(['name' => 'folje']);
         DB::table('categories')->insert(['name' => 'ndajfolje']);
         DB::table('categories')->insert(['name' => 'lidhëz']);
-
+        DB::table('categories')->insert(['name' => 'pjesëz']);
+        DB::table('categories')->insert(['name' => 'parafjalë']);
+        DB::table('categories')->insert(['name' => 'pasthirrmë']);
+        DB::table('categories')->insert(['name' => 'numëror']);
     }
 }

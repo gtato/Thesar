@@ -7,20 +7,22 @@ $(function () {
 function bindEvents(){
   $('.categories').change(onCategoryChange);
   $('.conjugs').click(onToggleConjugs);
-  
+  $('.add_meaning').click(addMeaning);
+  $('.del_meaning').click(delMeaning);
 }
 
 function onCategoryChange(e){
-  inx = e.target.id.split("_")[1];
-  seltext = $('#categories_'+inx+' option:selected').text();
   
-  $('.noun').hide();$('.verb').hide();
+  seltext = $(e.target).find(':selected').text()
+  parent = $(e.target).parents().find('.utilisation')
+
+  parent.find('.noun').hide();parent.find('.verb').hide();
   if(seltext.startsWith('em'))
-    $('.noun').show(500);
+    parent.find('.noun').show(500);
   else if(seltext.startsWith('fo'))
-    $('.verb').show(500);
+    parent.find('.verb').show(500);
   
-  $("#catspan_"+inx).html(seltext);
+  $(e.target).parents().find('.utilisation').find('.catspan').html(seltext);
 }
 
 function onToggleConjugs(e){
@@ -33,6 +35,26 @@ function onToggleConjugs(e){
     $('#def').slideDown(500);
   }
 }
+
+function addMeaning(e){
+  parent = $(e.target).parents().find('.utilisation');
+  lastmeaning = parent.find('.meaning:last'); 
+  copy  = lastmeaning.get(0).outerHTML;
+  $(copy).insertAfter(lastmeaning);
+  parent.find('.index').each(function( index ) { $( this ).html(index+1);});
+  $('.del_meaning').click(delMeaning);
+}
+
+function delMeaning(e){
+  parent = $(e.target).parents().find('.utilisation');
+  if (parent.find(".meaning").length == 1) return;
+  $(e.target).closest('.meaning').remove();
+  // copy  = lastmeaning.get(0).outerHTML;
+  // $(copy).insertAfter(lastmeaning);
+  parent.find('.index').each(function( index ) { $( this ).html(index+1);});
+}
+
+
 
 function setTags()
 {

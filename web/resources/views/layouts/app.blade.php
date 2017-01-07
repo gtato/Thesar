@@ -144,9 +144,8 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
-    <script src="/js/bootstrap-tagsinput.min.js"></script>
-    <script src="/js/typeahead.bundle.js"></script>
-    <script src="/js/entry.js"></script>
+    @yield('javascript')
+    
 
 </body>
 </html>

@@ -110,3 +110,26 @@
 #conjugs table th {
     text-align: center;
 }
+
+.bottom-round{
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.bottom-round{
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.add .text{visibility: hidden;}
+.add .glyphicon{
+   -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.add:hover .glyphicon{
+   color: #3097D1;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+}
+.add:hover .text{visibility: visible;}

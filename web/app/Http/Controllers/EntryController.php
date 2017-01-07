@@ -26,7 +26,7 @@ class EntryController extends Controller
     {
         $def = array('cat' => '');
         
-        $def['cat'] .= '<select id="categories_1" class="form-control categories">';
+        $def['cat'] .= '<select class="form-control categories">';
         $categories = Category::all();
         foreach ($categories as $category) 
             $def['cat'] .= '<option value="'. $category->id.'">'.$category->name.'</option>';
@@ -42,7 +42,8 @@ class EntryController extends Controller
         $tenses = array('E tashme', 'E pakryer', 'E kryer e thjeshtë', 'E kryer', 'Më se e kryer', 'E kryer e tejshkuar', 'E ardhme', 'E ardhme e përparme'); 
         $forms_names = array('dëftore', 'lidhore','kushtore','habitore','dëshirore','urdhërore');        
         $forms = array();
-        
+        $implicit_forms = array('Pjesore', 'Paskajore', 'Përcjellore', 'Mohore');        
+
         foreach ($forms_names as $form) 
             $forms[$form] = array();
         
@@ -94,6 +95,11 @@ class EntryController extends Controller
             // break;
         }
 
+
+        $html .='<div class="panel panel-info">';
+        $html .='<div class="panel-heading">Format e pashtjelluara</div>';
+        $html .= $this->createConjTable(array(''), '', $implicit_forms , $aux);
+        $html .='</div>';
         // return print_r($aux);
         return $html;
     }

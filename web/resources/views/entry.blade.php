@@ -26,17 +26,15 @@
                     <br/>
                     <div class="row">
                       <div class="col-sm-4 col-md-offset-4"><input type="text" class="form-control input-lg" placeholder="Hyrje e re"></div>
-                      <div class="col-sm-2 col-md-offset-1">
-                      <button type="button" class="btn btn-lg btn-default">Shto homonim <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
-                      </button>  
-                      </div>
-
+                      
                     </div>
                     
                     <br/><br/>
 
-                    
+                    <div class="utilisation">
+
                     <div class="row">
+                      
                       <div class="col-sm-2">{!! $def['cat'] !!}</div>
                       <div class="col-sm-2 collapse noun"><select class="form-control"><option value="0">femërore</option><option value="1">mashkullore</option></select></div>
                       <div class="col-sm-2 collapse noun"><button type="button" class="btn btn-default">Shto lakimet
@@ -44,31 +42,45 @@
                       <div class="col-sm-2 collapse verb"><select class="form-control"><option value="1">kalimatare</option><option value="0">jo kalimtare</option></select></div>
                       <div class="col-sm-2 collapse verb"><button type="button" class="btn btn-default conjugs">Shto zgjedhimet
                       </button></div>
-                      <div class="col-sm-2"><button type="button" class=" form-control btn btn-default">Shto përdorim <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 
-                      </button>  </div>
+                      
                       <div class="col-sm-4"></div>
                     </div>
 
-                    
                     <br>
 
-                    
-                    
-                    <div class="input-group">
-                      <span class="input-group-addon" style="width: 45px">1</span> 
+                    <div class="input-group meaning top-round">
+                      <span class="input-group-addon index" style="width: 45px">1</span> 
                       <div>
                         <input class="form-control" type="text" placeholder="Përkufizim" >
                         <input class="form-control" type="text" placeholder="Shëmbuj">
                         <input type="text" class="form-control tags" placeholder="Cilësi të tjera">
                       </div>
-                      <!-- <textarea class="form-control custom-control" rows="2" style="resize:none"></textarea>      -->
-                      <span class="input-group-addon btn btn-default"><span class="glyphicon glyphicon-minus-sign"></span></span>
+                      <span class="input-group-addon btn btn-default del_meaning"><span class="glyphicon glyphicon-minus-sign del_meaning"></span></span>
                     </div>
 
-                    
+                    <button type="button" class="form-control btn btn-default bottom-round add_meaning">Shto kuptim si <span class="catspan"></span> <span class="glyphicon glyphicon-plus-sign"></span></button>
 
-                    <button type="button" class="form-control btn btn-default ">Shto kuptim si <span id="catspan_1"></span> <span class="glyphicon glyphicon-plus-sign"></span></button>
+                    <br><br>
                     
+                    <span class="add" style="font-size: 20px">
+                    <span class="glyphicon glyphicon-plus-sign " aria-hidden="true"></span> 
+                    <span class="text">Shto kuptime në një tjetër rol.</span>
+                    </span>
+                    <br>
+                    <span class="add" style="font-size: 25px">
+                    <span class="glyphicon glyphicon-plus-sign " aria-hidden="true"></span> 
+                    <span class="text">Shto homonim.</span>
+                    </span>
+
+                    
+                    <br><br>
+                    <div class="row">
+                      <div class="col-sm-4 col-md-offset-4">
+                      <button type="button" class="form-control btn btn-primary">U bë</button>
+                      </div>
+                    </div>                    
+
+                    </div>
                   </div>
                   <div id="syn" class="tab-pane fade">
                     <h3>Menu 1</h3>
@@ -80,72 +92,16 @@
                   </div>
 
 
-                  <div id="conjugs" class=""> 
-                    <div class="row">
-                      <!-- <div class="panel panel-info">
-                      <div class="panel-heading">Mënyra dëftore</div>
-                      <table class="table table-striped table-condensed">
-                      <thead>
-                      <tr><th class="col-md-1"></th><th>E tashme</th><th>E pakryer</th><th>E kryer</th><th>E kryer e plotë</th></tr></thead>
-                      <tbody>
-                      <tr><td >Unë</td><td></td><td>kam</td><td></td><td>kisha</td></tr>
-                      <tr><td>Ti</td><td></td><td>ke</td><td></td><td>kishe</td></tr>
-                      <tr><td>Ajo/Ai</td><td></td><td>ka</td><td></td><td>kishte</td></tr>
-                      <tr><td>Ne</td><td></td><td>kemi</td><td></td><td>kishim</td></tr>
-                      <tr><td>Ju</td><td></td><td>keni</td><td></td><td>kishit</td></tr>
-                      <tr><td>Ato/Ata</td><td></td><td>kanë</td><td></td><td>kishin</td></tr>
-                      </tbody>
-                      </table>
-                      <br>
-                      <table class="table table-striped table-condensed">
-                      <thead>
-                      <tr><th class="col-md-1"></th><th>E kryer e thjeshtë</th><th>E kryer e tejshkuar</th><th>E ardhme</th><th>E ardhëshme e përparme</th></tr></thead>
-                      <tbody>
-                      <tr><td>Unë</td><td></td><td>pata</td><td>do të</td><td>do të kem</td></tr>
-                      <tr><td>Ti</td><td></td><td>pate</td><td>do të</td><td>do të kesh</td></tr>
-                      <tr><td>Ajo/Ai</td><td></td><td>pati</td><td>do të</td><td>do të ketë</td></tr>
-                      <tr><td>Ne</td><td></td><td>patëm</td><td>do të</td><td>do të kemi</td></tr>
-                      <tr><td>Ju</td><td></td><td>patët</td><td>do të</td><td>do të keni</td></tr>
-                      <tr><td>Ato/Ata</td><td></td><td>patën</td><td>do të</td><td>do të kenë</td></tr>
-                      </tbody>
-                      </table>
-                      </div>
-
-                      <br>
-
-                      <div class="panel panel-info">
-                      <div class="panel-heading">Mënyra kushtore</div>
-                      <table class="table table-striped table-condensed">
-                      <thead>
-                      <tr><th class="col-md-1"></th><th>E tashme</th><th>E kryer</th><th>E pakryer</th><th>E kryer e plotë</th></tr></thead>
-                      <tbody>
-                      <tr><td >Unë</td><td></td><td>kam</td><td></td><td>kisha</td></tr>
-                      <tr><td>Ti</td><td></td><td>ke</td><td></td><td>kishe</td></tr>
-                      <tr><td>Ajo/Ai</td><td></td><td>ka</td><td></td><td>kishte</td></tr>
-                      <tr><td>Ne</td><td></td><td>kemi</td><td></td><td>kishim</td></tr>
-                      <tr><td>Ju</td><td></td><td>keni</td><td></td><td>kishit</td></tr>
-                      <tr><td>Ato/Ata</td><td></td><td>kanë</td><td></td><td>kishin</td></tr>
-                      </tbody>
-                      </table>
-                      <br>
-                      <table class="table table-striped table-condensed">
-                      <thead>
-                      <tr><th class="col-md-1"></th><th>E kryer e thjeshtë</th><th>E kryer e tejshkuar</th><th>E ardhme</th><th>E ardhëshme e përparme</th></tr></thead>
-                      <tbody>
-                      <tr><td>Unë</td><td></td><td>pata</td><td>do të</td><td>do të kem</td></tr>
-                      <tr><td>Ti</td><td></td><td>pate</td><td>do të</td><td>do të kesh</td></tr>
-                      <tr><td>Ajo/Ai</td><td></td><td>pati</td><td>do të</td><td>do të ketë</td></tr>
-                      <tr><td>Ne</td><td></td><td>patëm</td><td>do të</td><td>do të kemi</td></tr>
-                      <tr><td>Ju</td><td></td><td>patët</td><td>do të</td><td>do të keni</td></tr>
-                      <tr><td>Ato/Ata</td><td></td><td>patën</td><td>do të</td><td>do të kenë</td></tr>
-                      </tbody>
-                      </table>
-                      </div> -->
+                  <div id="conjugs" class="tab-pane collapse"> 
+                    
+                     
                       {!! $conjugs !!}
 
-
-                    <div class="col-sm-4 col-md-offset-4"><button type="button" class="form-control btn btn-primary conjugs">U bë</button></div>
-                    </div>
+                      <div class="row">
+                      <div class="col-sm-4 col-md-offset-4">
+                      <button type="button" class="form-control btn btn-primary conjugs">U bë</button>
+                      </div>
+                      </div>
                   </div>
 
                 </div>
@@ -182,3 +138,8 @@
   
 @stop
 
+@section('javascript')
+<script src="/js/bootstrap-tagsinput.min.js"></script>
+<script src="/js/typeahead.bundle.js"></script>
+<script src="/js/entry.js"></script>
+@stop
