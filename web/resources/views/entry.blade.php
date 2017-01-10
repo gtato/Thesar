@@ -25,49 +25,54 @@
                     
                     <br/>
                     <div class="row">
-                      <div class="col-sm-4 col-md-offset-4"><input type="text" class="form-control input-lg" placeholder="Hyrje e re"></div>
+                      <div class="col-sm-4 col-md-offset-4"><input type="text" onchange="updateWord(event);" 
+                      onkeypress="this.onchange(event);" onpaste="this.onchange(event);" oninput="this.onchange(event);" class="form-control input-lg" placeholder="Hyrje e re"></div>
                       
                     </div>
                     
-                    <br/><br/>
+                    <br/>
 
-                    <div class="utilisation">
+                    <div class="model"  style="display: none">
+                    <div class="homonym">
+                      <div class="title"><span class="word"></span> <sup class="hindex">1</sup></div>
+                      <div class="role">
+                        <div class="row">
+                          <div class="col-sm-2">{!! $def['cat'] !!}</div>
+                          <div class="col-sm-2 collapse noun"><select class="form-control"><option value="0">femërore</option><option value="1">mashkullore</option></select></div>
+                          <div class="col-sm-2 collapse noun"><button type="button" class="btn btn-default">Shto lakimet
+                          </button></div>
+                          <div class="col-sm-2 collapse verb"><select class="form-control"><option value="1">kalimatare</option><option value="0">jo kalimtare</option></select></div>
+                          <div class="col-sm-2 collapse verb"><button type="button" class="btn btn-default conjugs" onclick="onToggleConjugs(event)">Shto zgjedhimet
+                          </button></div>
+                        </div>
 
-                    <div class="row">
-                      
-                      <div class="col-sm-2">{!! $def['cat'] !!}</div>
-                      <div class="col-sm-2 collapse noun"><select class="form-control"><option value="0">femërore</option><option value="1">mashkullore</option></select></div>
-                      <div class="col-sm-2 collapse noun"><button type="button" class="btn btn-default">Shto lakimet
-                      </button></div>
-                      <div class="col-sm-2 collapse verb"><select class="form-control"><option value="1">kalimatare</option><option value="0">jo kalimtare</option></select></div>
-                      <div class="col-sm-2 collapse verb"><button type="button" class="btn btn-default conjugs">Shto zgjedhimet
-                      </button></div>
-                      
-                      <div class="col-sm-4"></div>
-                    </div>
+                        <br>
 
-                    <br>
-
-                    <div class="input-group meaning top-round">
-                      <span class="input-group-addon index" style="width: 45px">1</span> 
-                      <div>
-                        <input class="form-control" type="text" placeholder="Përkufizim" >
-                        <input class="form-control" type="text" placeholder="Shëmbuj">
-                        <input type="text" class="form-control tags" placeholder="Cilësi të tjera">
+                      <div class="meaning input-group top-round">
+                        <span class="input-group-addon index" style="width: 45px">1</span> 
+                        <div>
+                          <input class="form-control" type="text" placeholder="Përkufizim" >
+                          <input class="form-control" type="text" placeholder="Shëmbuj">
+                          <input type="text" class="form-control tags" placeholder="Cilësi të tjera">
+                        </div>
+                        <span onclick="delMeaning(event)" class="input-group-addon btn btn-default del_meaning"><span class="glyphicon glyphicon-minus-sign del_meaning"></span></span>
                       </div>
-                      <span class="input-group-addon btn btn-default del_meaning"><span class="glyphicon glyphicon-minus-sign del_meaning"></span></span>
+
+                      <button type="button" onclick="addMeaning(event)" class="form-control btn btn-default bottom-round add_meaning">Shto kuptim si <span class="catspan"></span> <span class="glyphicon glyphicon-plus-sign"></span></button>
+
+                      <br><br>
+                    </div>  
+                      <span onclick="addRole(event)" class="add add_role" style="font-size: 20px">
+                      <span class="glyphicon glyphicon-plus-sign " aria-hidden="true"></span> 
+                      <span class="text">Shto kuptime në një tjetër rol.</span>
+                      </span>
+                    
+                    <hr>
+                    </div>
                     </div>
 
-                    <button type="button" class="form-control btn btn-default bottom-round add_meaning">Shto kuptim si <span class="catspan"></span> <span class="glyphicon glyphicon-plus-sign"></span></button>
-
-                    <br><br>
-                    
-                    <span class="add" style="font-size: 20px">
-                    <span class="glyphicon glyphicon-plus-sign " aria-hidden="true"></span> 
-                    <span class="text">Shto kuptime në një tjetër rol.</span>
-                    </span>
-                    <br>
-                    <span class="add" style="font-size: 25px">
+                    <span class="placeholder" style="display: none;" ></span>
+                    <span onclick="addHomonym(event)" class="add add_homonym" style="font-size: 25px">
                     <span class="glyphicon glyphicon-plus-sign " aria-hidden="true"></span> 
                     <span class="text">Shto homonim.</span>
                     </span>
@@ -80,7 +85,7 @@
                       </div>
                     </div>                    
 
-                    </div>
+                    
                   </div>
                   <div id="syn" class="tab-pane fade">
                     <h3>Menu 1</h3>
@@ -99,7 +104,7 @@
 
                       <div class="row">
                       <div class="col-sm-4 col-md-offset-4">
-                      <button type="button" class="form-control btn btn-primary conjugs">U bë</button>
+                      <button type="button" class="form-control btn btn-primary conjugs" onclick="onToggleConjugs(event)">U bë</button>
                       </div>
                       </div>
                   </div>

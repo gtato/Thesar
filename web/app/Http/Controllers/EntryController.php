@@ -26,7 +26,7 @@ class EntryController extends Controller
     {
         $def = array('cat' => '');
         
-        $def['cat'] .= '<select class="form-control categories">';
+        $def['cat'] .= '<select onchange="onCategoryChange(event)" class="form-control categories">';
         $categories = Category::all();
         foreach ($categories as $category) 
             $def['cat'] .= '<option value="'. $category->id.'">'.$category->name.'</option>';
